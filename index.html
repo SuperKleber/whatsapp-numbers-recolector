@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Planex Recolector WhatsApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="iKontacts - Save unknown numbers from WhatsApp"
+    />
+    <meta name="author" content="BoMoSi" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body style="width: 300px">
+    <table style="width: 100%">
+      <tr>
+        <td>
+          <h1 class="title">Planex Recolector WhatsApp</h1>
+          <p>Exporta todos los números no guardados</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input
+            style="width: 100%"
+            id="btn_exp_unknown"
+            class="button"
+            type="button"
+            value="Exportar"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div id="lblStatus" style="color: green; font-weight: bold"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input
+            style="width: 100%"
+            id="btn_exp_cancel"
+            type="button"
+            class="cancel-button"
+            value="Parar"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div id="lblMsg" style="color: red; font-weight: bold"></div>
+        </td>
+      </tr>
+    </table>
+
+    <script src="exp.js"></script>
+  </body>
+</html>
