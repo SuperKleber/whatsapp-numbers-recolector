@@ -122,14 +122,14 @@ function get_contacts(is_unknown) {
               "Se obtuvo " +
               nums_all.length.toString() +
               " números. Espere porfavor señor Ramiro...";
-            if (no_count > 10) {
-              lblStatus.innerText =
-                "Finalizado. Se obtuvo " +
-                nums_all.length.toString() +
-                " números.";
-              exp_now();
-              return;
-            }
+            // if (no_count > 10) {
+            //   lblStatus.innerText =
+            //     "Finalizado. Se obtuvo " +
+            //     nums_all.length.toString() +
+            //     " números.";
+            //   exp_now();
+            //   return;
+            // }
             chrome.tabs.executeScript(
               {
                 code: "(" + scrollDown + ")();"
