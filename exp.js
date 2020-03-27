@@ -26,7 +26,7 @@ function constructExp() {
     btn_exp_cancel.style.display = "";
     btn_exp_unknown.disabled = true;
     lblMsg.innerText = "";
-    lblStatus.innerText = "Porfavor espere...";
+    lblStatus.innerText = "Please wait...";
     get_contacts(true);
   });
   btn_exp_cancel.addEventListener("click", function() {
@@ -41,7 +41,7 @@ function get_contacts(is_unknown) {
       var activeTab = tabs[0];
       var url = activeTab.url;
       if (!url.includes("web.whatsapp.com")) {
-        var msg = "Abra web.whatsapp.com y conéctese con su WhatsApp.";
+        var msg = "Open web.whatsapp.com and connect with your WhatsApp";
         reset_controls();
         alert1(msg);
         return;
@@ -93,7 +93,8 @@ function get_contacts(is_unknown) {
           if (!isnum) continue;
           var exts = nums.includes(num);
           if (exts) continue;
-          nums.push(parseInt(num.replace("+591", "")));
+          // nums.push(parseInt(num.replace("+591", "")));
+          nums.push(num);
         }
         var res = JSON.stringify(nums);
         return res;
@@ -119,9 +120,9 @@ function get_contacts(is_unknown) {
             if (got) no_count = 0;
             else no_count++;
             lblStatus.innerText =
-              "Se obtuvo " +
+              "collected " +
               nums_all.length.toString() +
-              " números. Espere porfavor señor Ramiro...";
+              "numbers. Please wait...";
             // if (no_count > 10) {
             //   lblStatus.innerText =
             //     "Finalizado. Se obtuvo " +
@@ -144,14 +145,14 @@ function get_contacts(is_unknown) {
         );
       }
       // var code = "window.location.reload();";
-      var code = "console.log('empezar');";
+      var code = "console.log('start');";
       chrome.tabs.executeScript(
         {
           code: code
         },
         results1 => {
           setTimeout(function() {
-            this.log1("llamado después de recargar");
+            this.log1("called after reloading");
             doit();
           }, 1000);
         }
@@ -163,10 +164,10 @@ function get_contacts(is_unknown) {
 }
 function exp_now() {
   if (nums_all.length == 0) {
-    alert1("No hay nuevos números disponibles para exportar");
+    alert1("There are no new numbers available to export");
     return;
   }
-  var res = "movil \n";
+  var res = "phone \n";
   for (var i = 0; i < nums_all.length; i++) {
     res += nums_all[i];
     if (i < nums_all.length - 1) res += ",\n";
